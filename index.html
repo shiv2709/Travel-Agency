@@ -1,0 +1,342 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anything Works - Your Travel Partner</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Global container for better structure */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Promotions & Offers Banner */
+    .promo-banner {
+      background-color: #f39c12;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .promo-banner a {
+      color: #fff;
+      text-decoration: underline;
+      margin-left: 10px;
+    }
+
+    .promo-banner button {
+      background-color: #e67e22;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 15px;
+    }
+
+    .promo-banner button:hover {
+      background-color: #d35400;
+    }
+
+    /* Header and Navigation */
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #27ae60;
+      text-align: center;
+      margin: 0;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #27ae60;
+      border-radius: 5px;
+    }
+
+    /* Home Section */
+    .home {
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      background-image: url('https://images.unsplash.com/photo-1495900805437-df0b542d6f7f?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHByb2Zlc3Npb25hbCUyMHN0YWNrfGVufDB8fHx8fDE2OTY3NDI1MzM&ixlib=rb-1.2.1&q=80&w=1600');
+      background-size: cover;
+      background-position: center;
+      border-bottom: 2px solid #27ae60;
+      margin-top: -20px;
+    }
+
+    /* Welcome Box */
+    .welcome-box {
+      background-color: #fff;
+      color: #333;
+      padding: 40px;
+      margin-top: 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .welcome-box h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #27ae60;
+    }
+
+    .welcome-box p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .welcome-box a {
+      text-decoration: none;
+      padding: 15px 30px;
+      background-color: #27ae60;
+      color: #fff;
+      font-size: 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .welcome-box a:hover {
+      background-color: #1f8a44;
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 20px;
+      background-color: #fff;
+      text-align: center;
+      margin-top: 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      border-top: 2px solid #27ae60;
+    }
+
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #27ae60;
+    }
+
+    .about p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+      background-color: #f9f9f9;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-top: 2px solid #27ae60;
+    }
+
+    .how-it-works h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #27ae60;
+    }
+
+    .how-it-works p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .how-it-works ul {
+      list-style-type: none;
+      padding: 0;
+      font-size: 18px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .how-it-works li {
+      margin-bottom: 15px;
+    }
+
+    .how-it-works li strong {
+      color: #27ae60;
+    }
+
+    /* Travel Types Section */
+    .travel-types {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 60px 20px;
+      background-color: #fff;
+      margin-top: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-top: 2px solid #27ae60;
+    }
+
+    .travel-types .card {
+      background-color: #f8f8f8;
+      width: 32%;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .travel-types .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .travel-types .card h3 {
+      font-size: 24px;
+      margin-top: 15px;
+      color: #27ae60;
+    }
+
+    .travel-types .card p {
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .travel-types .card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Promotions & Offers Banner -->
+  <div class="promo-banner">
+    <span>🌟 Celebrate the Holidays with Special Offers! 🌟</span>
+    <a href="#offers">View Our Special Offers</a>
+    <button>Book Now & Save</button>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Anything Works</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="travel-packages.html">Travel Packages</a>
+      <a href="popular-destinations.html">Popular Destinations</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="welcome-box">
+      <h2>Welcome to Anything Works</h2>
+      <p>Your trusted travel partner for unforgettable experiences around the world.</p>
+      <a href="#about">How It Works</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>About Anything Works</h2>
+    <p>Anything Works is your go-to travel agency for tailored experiences, adventure packages, and seamless travel arrangements. We specialize in making your travel dreams a reality, whether it's a luxurious vacation, an adventurous getaway, or a family trip.</p>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="how-it-works">
+    <h2>How It Works</h2>
+    <p>Planning your next trip with Anything Works is simple and stress-free. Here's how we make it easy for you:</p>
+    <ul>
+      <li><strong>Step 1:</strong> Choose your ideal destination or travel theme (vacation, adventure, business, etc.).</li>
+      <li><strong>Step 2:</strong> Browse our curated travel packages or contact us for a custom itinerary designed just for you.</li>
+      <li><strong>Step 3:</strong> Book your travel package with confidence. We take care of everything, including flights, accommodations, activities, and more.</li>
+      <li><strong>Step 4:</strong> Enjoy your trip! We handle the logistics so you can focus on making memories.</li>
+    </ul>
+    <p>Our team is dedicated to providing you with a seamless, memorable experience from start to finish. Ready to get started? Let’s plan your next adventure!</p>
+  </section>
+
+  <!-- Travel Types Section -->
+  <section class="travel-types">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1506748686214-09c5ed9a4930?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHByb2Zlc3Npb25hbCUyMHZheWNhdGlvbnxlbnwwfHx8fDE2OTY3NDI1MzM&ixlib=rb-1.2.1&q=80&w=1600" alt="Vacation Travel">
+      <h3>Vacations</h3>
+      <p>Relax and unwind with our curated vacation packages designed to provide the perfect getaway for you and your loved ones.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1533073136723-d9a5195a84b5?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDExfHxiYXNpbmVzcyUyMHRyYXZlbHxlbnwwfHx8fDE2OTY3NDI1MzM&ixid=rb-1.2.1&q=80&w=1600" alt="Business Travel">
+      <h3>Business Travel</h3>
+      <p>We make business travel easy and efficient. From corporate events to executive travel, we take care of the details.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1591220443300-7b8c24b3e6c1?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fGFkdmVudHVyZSUyMHRyYXZlbHxlbnwwfHx8fDE2OTY3NDI1MzM&ixid=rb-1.2.1&q=80&w=1600" alt="Adventure Travel">
+      <h3>Adventure Travel</h3>
+      <p>For the thrill-seeker, we offer exciting adventure packages to the most stunning locations. Whether it's hiking, safaris, or extreme sports, we've got you covered.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Anything Works. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
